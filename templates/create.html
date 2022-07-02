@@ -1,0 +1,71 @@
+{{ define "create" }}
+
+{{ template "header" }}
+<main role="main">
+
+  <form action="/inf_save/" method="post">
+
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Форма для додавання інформації про котиків</h1>
+        <p class="lead text-muted">Форма для додавання інформації про котиків</p>
+        <p>
+          <button class="btn btn-light my-2">Добавити інформацію</button>
+          <a href="/album" class="btn btn-light my-2">Альбом котиків</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+
+
+          <div class="col-md-4">
+            
+              <label class="form-label">Ім'я котика</label>
+              <input name="catName" type="text" class="form-control" placeholder="Мурчик напр..."required><br />
+            
+              
+            
+              <label class="form-label">Дата народження котика</label>
+              <input type="date" max="2022-01-01" onfocus="this.max=new Date().toISOString().split('T')[0]" class="form-control" name="birthDate" required><br />
+            
+          </div>
+
+
+          <div class="col-md-4">
+            
+              <label class="form-label">Рівень пухнастості</label>
+              <input type="number" class="form-control" name="fluffyLVL" placeholder="від 1 до 5" min="1" 
+                max="5"required><br />
+            
+            
+              <label class="form-label">URL-адрес фотографії котика</label>
+              <input type="url" class="form-control" name="URL" placeholder="https://forexample.example"required><br/>
+            
+          </div>
+
+
+          <div class="col-md-4">
+            
+              <label class="form-label">Ім'я власник</label>
+              <input type="text" class="form-control" name="owner" placeholder="Денис Іванов напр.."required><br />
+            
+            
+              <label class="form-label">Номер телефону власника</label>
+              <input type="tel" class="form-control" name="phoneOwner" placeholder="+38012 345 67 89"required><br />
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</main>
+
+{{ template "footer" }}
+
+{{ end }}
